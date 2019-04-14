@@ -1,0 +1,10 @@
+#!/bin/bash
+TITLE=$(grep title index.php | sed -E 's|^\s+<title>||' | sed 's|</title>||')
+CURRENT_WINDOW=$(xdotool getwindowfocus)
+BROWSER_WINDOW=$(xdotool search --onlyvisible --name "$TITLE")
+echo current: $CURRENT_WINDOW
+echo browser: $BROWSER_WINDOW
+xdotool windowactivate "$BROWSER_WINDOW"
+xdotool key 'ctrl+r'
+xdotool windowactivate "$CURRENT_WINDOW"
+
