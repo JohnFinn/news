@@ -14,7 +14,7 @@
         <?php
             for ($i = 0; $i < 3; $i += 1) {
         ?>
-        <div class="col-sm-4 ">
+        <div class="col-lg-4">
             <div class="pl-sm-1 bg-dark text-center text-white">
                 <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum in</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate, ipsam pariatur vel quia repudiandae eaque doloremque magni repellat mollitia blanditiis expedita omnis necessitatibus a suscipit cumque, sed ratione eos.</p>
