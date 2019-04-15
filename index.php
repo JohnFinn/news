@@ -7,11 +7,11 @@
     <title>easyToFindWorkaround</title>
 </head>
 <?php 
-    $conn = new mysqli('localhost', 'root', '');
+    include('news.php');
+    $conn = new mysqli('localhost', 'root', '123', 'news');
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    echo "Connected successfully";
 ?>
 <body class="container-fluid bg-secondary">
     <?php 
