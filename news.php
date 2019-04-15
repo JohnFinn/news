@@ -20,6 +20,12 @@ class NewsDatabase {
         while ($row = $result->fetch_assoc())
             yield new News($row['title'], $row['content']);
     }
+
+    public function get_one($id) {
+        $result = $this->connection->query("select title, content from news where id = " . $id . ";");
+        $row = $result->fetch_assoc();
+        return new News($row['title'], $row['content']);
+    }
 }
 
 ?>
