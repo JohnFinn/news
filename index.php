@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>easyToFindWorkaround</title>
 </head>
+<?php 
+    $conn = new mysqli('localhost', 'root', '');
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    echo "Connected successfully";
+?>
 <body class="container-fluid bg-secondary">
     <?php 
         for ($r = 0; $r < 4; $r += 1) {
