@@ -22,7 +22,7 @@
         <div class="col-lg-4">
             <div class="pl-sm-1 bg-dark text-center text-white"  <?php printf('onclick="location.href=\'single.php?id=%d\';"', $newsGen->current()->id); ?>>
                 <h2><?php echo $newsGen->current()->title ?></h2>
-                <p><?php  echo substr($newsGen->current()->content, 0, 1024) ?></p>
+                <p><?php  echo substr($newsGen->current()->content, 0, 512) ?></p>
             </div>
             <?php $newsGen->next(); ?>
         </div>
