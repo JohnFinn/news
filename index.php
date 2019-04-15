@@ -12,6 +12,8 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+    $news = new NewsDatabase($conn);
+    $newsGen = $news->get(0,12);
 ?>
 <body class="container-fluid bg-secondary">
     <?php 
@@ -23,11 +25,10 @@
         ?>
         <div class="col-lg-4">
             <div class="pl-sm-1 bg-dark text-center text-white">
-                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum in</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate, ipsam pariatur vel quia repudiandae eaque doloremque magni repellat mollitia blanditiis expedita omnis necessitatibus a suscipit cumque, sed ratione eos.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, repellendus! Sint amet, sit ullam cum laudantium sequi dignissimos deserunt illum eius molestias alias et magnam. Reprehenderit esse quo id neque.</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptatibus libero labore odit iusto et blanditiis natus obcaecati tempora, nulla dolor, ducimus omnis, excepturi est. Eos itaque laudantium vitae ipsum.</p>
-            </div>
+                <h2><?php echo $newsGen->current()->title ?></h2>
+                <p><?php  echo substr($newsGen->current()->content, 0, 1024) ?></p>
+                </div>
+            <?php $newsGen->next(); ?>
         </div>
         <?php } ?>
     </div>
