@@ -17,8 +17,8 @@ class NewsDatabase {
 
     public function get($from, $to) {
         $result = $this->connection->query("select title, content from news limit " . $from . ", " . $to . ";");
-        $row = $result->fetch_assoc();
-        return new News($row['title'], $row['content']);
+        while ($row = $result->fetch_assoc())
+            yield new News($row['title'], $row['content']);
     }
 }
 
