@@ -16,24 +16,18 @@
     $newsGen = $news->get(0,12);
 ?>
 <body class="container-fluid bg-secondary">
-    <?php 
-        for ($r = 0; $r < 4; $r += 1) {
-    ?>
+    <?php for ($r = 0; $r < 4; $r += 1) { ?>
     <div class="row">
-        <?php
-            for ($i = 0; $i < 3; $i += 1) {
-        ?>
+        <?php for ($i = 0; $i < 3; $i += 1) { ?>
         <div class="col-lg-4">
             <div class="pl-sm-1 bg-dark text-center text-white">
                 <h2><?php echo $newsGen->current()->title ?></h2>
                 <p><?php  echo substr($newsGen->current()->content, 0, 1024) ?></p>
-                </div>
+            </div>
             <?php $newsGen->next(); ?>
         </div>
         <?php } ?>
     </div>
-    <?php
-        }
-    ?>
+    <?php } ?>
 </body>
 </html>
