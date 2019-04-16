@@ -19,8 +19,8 @@
     <?php for ($r = 0; $r < 4; $r += 1) { ?>
     <div class="row">
         <?php for ($i = 0; $i < 3; $i += 1) { ?>
-        <div class="col-lg-4">
-            <div class="pl-sm-1 bg-dark text-center text-white"  <?php printf('onclick="location.href=\'single.php?id=%d\';"', $newsGen->current()->id); ?>>
+        <div class="col-lg-4 px-0 px-md-1">
+            <div style="height: 95%" class="bg-dark text-center text-white"  <?php printf('onclick="location.href=\'single.php?id=%d\';"', $newsGen->current()->id); ?>>
                 <h2><?php echo $newsGen->current()->title ?></h2>
                 <p><?php  echo substr($newsGen->current()->content, 0, 512) ?></p>
             </div>
